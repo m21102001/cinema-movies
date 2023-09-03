@@ -1,0 +1,86 @@
+.root{
+    background-color: #fff;
+    margin: 1rem;
+}
+.return{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgb(203, 203, 203);
+    text-align: center;
+}
+.screen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 12rem;
+    margin-bottom: 1.5rem;
+}
+.chair{
+    height: 30px;
+    width: 2.8rem !important;
+    text-align: left;
+    margin: 1rem;
+    border: 1px solid #000;
+    border-radius: 4px;
+}
+.chairSelected{
+    background-color: #041C45;
+    height: 30px;
+    width: 2.8rem !important;
+    text-align: left;
+    margin: 1rem;
+    border: 1px solid #041C45;
+    color: white;
+    border-radius: 4px;
+}
+.chairSold{
+    background-color: #118eea;
+    height: 30px;
+    width: 2.8rem !important;
+    text-align: left;
+    margin: 1rem;
+    border: 1px solid #118eea;
+    color: white;
+    border-radius: 4px;
+}
+.hall{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.hall h5{
+    text-align: center;
+    width: 4rem;
+    height: 4rem !important;
+    padding-top: 1rem;
+    border: 1px solid #000;
+    border-radius: 4px;
+}
+.special{
+    background-color: #041C45;
+    color: white;
+}
+.footer{
+    display: flex;
+    justify-content: space-between;
+}
+.sold{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #118eea;
+}
+.available{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid #000;
+}
+.selected{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #041C45;
+}
