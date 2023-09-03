@@ -9,6 +9,7 @@ const index = () => {
 
   return (
     <div className={styles.root}>
+      <Navbar />
       <Header />
       <div className={styles.Grid}>
         {cardRepeat.map((index) => (
