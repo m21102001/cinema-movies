@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import styles from './shop.module.css'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';

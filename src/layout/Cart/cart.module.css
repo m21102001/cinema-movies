@@ -25,15 +25,14 @@
   justify-content: space-between;
   width: 5rem;
   align-items: center;
-
   border-radius: 50%;
 }
 .del,
 .edit {
   font-size: 1rem;
-  padding: 0.3rem 0.6rem;
+  /* padding: 0.3rem 0.6rem; */
   background-color: rgb(212, 207, 207);
-  border-radius: 50%;
+  /* border-radius: 50%; */
   align-items: center;
 }
 

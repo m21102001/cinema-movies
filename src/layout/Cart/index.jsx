@@ -14,8 +14,8 @@ const index = () => {
           <div className={styles.name}>
             <h1>Name</h1>
             <div className={styles.icon}>
-              <FaTrash className={styles.del} />
-              <FaPen className={styles.edit} />
+              <FaTrash />
+              <FaPen />
             </div>
           </div>
           <div className={styles.but}>
