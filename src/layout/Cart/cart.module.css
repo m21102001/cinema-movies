@@ -1,0 +1,70 @@
+.home_con {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 33rem;
+  align-items: center;
+  margin: auto;
+}
+.home_img img {
+  width: 13rem;
+  margin: auto;
+}
+.right_con {
+  width: 18rem;
+}
+.name {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 5rem;
+  align-items: center;
+
+  border-radius: 50%;
+}
+.del,
+.edit {
+  font-size: 1rem;
+  padding: 0.3rem 0.6rem;
+  background-color: rgb(212, 207, 207);
+  border-radius: 50%;
+  align-items: center;
+}
+
+.but h1 {
+  font-size: 1.5rem;
+}
+.butGroup {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.butGroup button {
+  width: 8.5rem;
+  margin: 0.5rem 0;
+  padding: 0.8rem 0;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 0.8rem;
+}
+.colBut {
+  background-color: rgb(3, 3, 66);
+  color: #fff;
+}
+.select button {
+  background-color: rgb(3, 3, 66);
+  color: #fff;
+  width: 18rem;
+  padding: 0.8rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 1rem;
+  border: none;
+  margin-top: 1rem;
+}

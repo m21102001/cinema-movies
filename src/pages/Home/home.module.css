@@ -1,3 +1,12 @@
-.root{
-    color: chocolate;
+.root {
+  width: 95%;
+  margin: auto;
+}
+
+.Grid {
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(33rem, 1fr));
+  gap: 2rem 0;
+  margin: auto;
 }
