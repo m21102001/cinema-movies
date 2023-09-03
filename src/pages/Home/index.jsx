@@ -6,6 +6,7 @@ import { Header, Footer, Navbar } from '@/layout'
 const index = () => {
   return (
     <div className={styles.root}>
+      <Navbar />
       <Header />
       Home Pag
       <br/>
