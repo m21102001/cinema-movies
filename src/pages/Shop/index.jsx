@@ -1,4 +1,5 @@
 import styles from './shop.module.css'
+import { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -9,214 +10,218 @@ import { BsChevronLeft } from 'react-icons/bs';
 import { BsCreditCard } from 'react-icons/bs';
 import { AiFillStar } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
+import React from 'react';
 // import { IoCashOutline } from 'react-icons/io';
 
 
 const index = () => {
 
-  // const [colors,setcolor] = useState('');
+  // const [paymentmethod,setMethod] = useState(0);
+  // const [creditmethod,setCreditMethod] = useState(0);
+  // const [cashmethod,setCashMethod] = useState(0);
+  
 
-  // const availableColors = colors.filter(chairs => chairs.type === "available")
-  // const chairs = [
-  //   {
-  //     chair: "A1",
-  //     type:"available"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"available"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"sold"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"sold"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"sold"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"sold"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"available"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"available"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"available"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"available"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"available"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"available"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"available"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"available"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"available"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"sold"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"selected"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"sold"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"selected"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"selected"
+  const [selectedchair, setSelectedchair] = useState([]);
+  
 
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"selected",
-
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"selected"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"available"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"available"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"available"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"available"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"available"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"sold"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"sold"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"available"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"selected"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"selected"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"selected"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"available"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"available"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"sold"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"sold"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"sold"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"available"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"available"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"available"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"sold"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"sold"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"available"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"available"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"available"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"available"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"selected"
-  //   },
-  //   {
-  //     chair: "A1",
-  //     type:"available"
-  //   },
-  // ]
+  const chairs = [
+    {
+      chair: "A1",
+      type: "available",
+    },
+    {
+      chair: "A1",
+      type: "available",
+    },
+    {
+      chair: "A1",
+      type: "sold",
+    },
+    {
+      chair: "A1",
+      type: "sold",
+    },
+    {
+      chair: "A1",
+      type: "sold",
+    },
+    {
+      chair: "A1",
+      type: "sold",
+    },
+    {
+      chair: "A1",
+      type: "available",
+    },
+    {
+      chair: "A1",
+      type: "available",
+    },
+    {
+      chair: "A1",
+      type: "available",
+    },
+    {
+      chair: "A1",
+      type: "available",
+    },
+    {
+      chair: "A1",
+      type: "available",
+    },
+    {
+      chair: "A1",
+      type: "available",
+    },
+    {
+      chair: "A1",
+      type: "available",
+    },
+    {
+      chair: "A1",
+      type: "available",
+    },
+    {
+      chair: "A1",
+      type: "available",
+    },
+    {
+      chair: "A1",
+      type: "sold",
+    },
+    {
+      chair: "A1",
+      type: "selected",
+    },
+    {
+      chair: "A1",
+      type: "sold",
+    },
+    {
+      chair: "A1",
+      type: "selected",
+    },
+    {
+      chair: "A1",
+      type: "selected",
+    },
+    {
+      chair: "A1",
+      type: "selected",
+    },
+    {
+      chair: "A1",
+      type: "selected",
+    },
+    {
+      chair: "A1",
+      type: "available",
+    },
+    {
+      chair: "A1",
+      type: "available",
+    },
+    {
+      chair: "A1",
+      type: "available",
+    },
+    {
+      chair: "A1",
+      type: "available",
+    },
+    {
+      chair: "A1",
+      type: "available",
+    },
+    {
+      chair: "A1",
+      type: "sold"
+    },
+    {
+      chair: "A1",
+      type: "sold"
+    },
+    {
+      chair: "A1",
+      type: "available"
+    },
+    {
+      chair: "A1",
+      type: "selected"
+    },
+    {
+      chair: "A1",
+      type: "selected"
+    },
+    {
+      chair: "A1",
+      type: "selected"
+    },
+    {
+      chair: "A1",
+      type: "available"
+    },
+    {
+      chair: "A1",
+      type: "available"
+    },
+    {
+      chair: "A1",
+      type: "sold"
+    },
+    {
+      chair: "A1",
+      type: "sold"
+    },
+    {
+      chair: "A1",
+      type: "sold"
+    },
+    {
+      chair: "A1",
+      type: "available"
+    },
+    {
+      chair: "A1",
+      type: "available"
+    },
+    {
+      chair: "A1",
+      type: "available"
+    },
+    {
+      chair: "A1",
+      type: "sold"
+    },
+    {
+      chair: "A1",
+      type: "sold"
+    },
+    {
+      chair: "A1",
+      type: "available"
+    },
+    {
+      chair: "A1",
+      type: "available"
+    },
+    {
+      chair: "A1",
+      type: "available"
+    },
+    {
+      chair: "A1",
+      type: "available"
+    },
+    {
+      chair: "A1",
+      type: "selected"
+    },
+    {
+      chair: "A1",
+      type: "available"
+    },
+  ]
 
   return (
     <div className={styles.root}>
@@ -225,8 +230,8 @@ const index = () => {
           <Col lg={1} style={{ marginBottom: "1.5rem" }}>
             <div className={styles.return}>
               <Link
-              to='/'>
-              <BsChevronLeft style={{ width: "1.5rem", height: "1.5rem", marginTop: "0.5rem", marginRight: "0.1rem" }} />
+                to='/'>
+                <BsChevronLeft style={{ width: "1.5rem", height: "1.5rem", marginTop: "0.5rem", marginRight: "0.1rem" }} />
               </Link>
             </div>
           </Col>
@@ -234,8 +239,8 @@ const index = () => {
             <div>
               <Row style={{ marginBottom: "2rem" }}>
                 <Card style={{ background: "#f3f3fa", width: "100%" }}>
-                  <div style={{ display: "flex", margin: "0.5rem" }}>
-                    <Card.Img variant="top" src={image1} style={{ width: "12rem" }} />
+                  <div className={styles.card}>
+                    <Card.Img variant="top" className={styles.cardimg} src={image1} style={{ width: "12rem" }} />
                     <Card.Body>
                       <Card.Title
                         style={{
@@ -296,21 +301,21 @@ const index = () => {
                           <Card.Title>Payment Method</Card.Title>
                           <div style={{ display: "flex" }}>
                             <Card.Text>
-                              <input type='radio' id='method1' name='method' value="method1" />
+                              <input type='radio' id='method1' name='method' value='method1' />
                               <label htmlFor="method1" style={{ marginLeft: "1rem" }}><BsCreditCard style={{ fontSize: "1.5rem", marginRight: "0.3rem" }} />Cash</label>
                             </Card.Text>
                             <Card.Text style={{ marginLeft: "8rem" }}>
-                              <input type='radio' id='method2' name='method' value="method2" />
+                              <input type='radio' id='method2' name='method' value='method2' />
                               <label htmlFor="method2" style={{ marginLeft: "1rem" }}><BsCreditCard style={{ fontSize: "1.5rem", marginRight: "0.3rem" }} />Credit card </label>
                             </Card.Text>
                           </div>
                         </Card.Body>
                         <Card.Subtitle style={{ marginBottom: "1rem" }}>Selected Seats : 32</Card.Subtitle>
                         <Card.Subtitle style={{ marginBottom: "1rem" }}>Total Payment : 300,60$</Card.Subtitle>
-                        <Link 
-                        to='/report'>
-                        <Button style={{ backgroundColor: "#041C45", border: "#041C45", padding: "1rem 0rem", color: "white", width: "100%", borderRadius: "0.3rem" }}
-                        >Book a Ticket</Button>
+                        <Link
+                          to='/report'>
+                          <Button style={{ backgroundColor: "#041C45", border: "#041C45", padding: "1rem 0rem", color: "white", width: "100%", borderRadius: "0.3rem" }}
+                          >Book a Ticket</Button>
                         </Link>
                       </Card.Body>
                     </div>
@@ -325,71 +330,29 @@ const index = () => {
               Screen this way
             </Row>
             <Row style={{ height: "70%" }}>
-              {/* {chairs.map((e) => ( */}
-                <div className={styles.chair}>A1</div>
-                <div className={styles.chair}>A1</div>
-                <div className={styles.chairSold}>A1</div>
-                <div className={styles.chairSold}>A1</div>
-                <div className={styles.chairSold}>A1</div>
-                <div className={styles.chair}>A1</div>
-                <div className={styles.chairSelected}>A1</div>
-                <div className={styles.chairSelected}>A1</div>
-                <div className={styles.chair}>A1</div>
-                <div className={styles.chair}>A1</div>
-                <div className={styles.chair}>A1</div>
-                <div className={styles.chairSold}>A1</div>
-                <div className={styles.chairSold}>A1</div>
-                <div className={styles.chairSold}>A1</div>
-                <div className={styles.chair}>A1</div>
-                <div className={styles.chair}>A1</div>
-                <div className={styles.chair}>A1</div>
-                <div className={styles.chairSelected}>A1</div>
-                <div className={styles.chairSelected}>A1</div>
-                <div className={styles.chair}>A1</div>
-                <div className={styles.chairSold}>A1</div>
-                <div className={styles.chairSold}>A1</div>
-                <div className={styles.chairSold}>A1</div>
-                <div className={styles.chair}>A1</div>
-                <div className={styles.chair}>A1</div>
-                <div className={styles.chair}>A1</div>
-                <div className={styles.chairSelected}>A1</div>
-                <div className={styles.chair}>A1</div>
-                <div className={styles.chairSelected}>A1</div>
-                <div className={styles.chair}>A1</div>
-                <div className={styles.chair}>A1</div>
-                <div className={styles.chairSold}>A1</div>
-                <div className={styles.chairSold}>A1</div>
-                <div className={styles.chair}>A1</div>
-                <div className={styles.chair}>A1</div>
-                <div className={styles.chair}>A1</div>
-                <div className={styles.chair}>A1</div>
-                <div className={styles.chair}>A1</div>
-                <div className={styles.chairSold}>A1</div>
-                <div className={styles.chairSold}>A1</div>
-                <div className={styles.chair}>A1</div>
-                <div className={styles.chairSold}>A1</div>
-                <div className={styles.chair}>A1</div>
-                <div className={styles.chairSelected}>A1</div>
-                <div className={styles.chair}>A1</div>
-                <div className={styles.chair}>A1</div>
-                <div className={styles.chairSold}>A1</div>
-                <div className={styles.chairSold}>A1</div>
-                <div className={styles.chair}>A1</div>
-                <div className={styles.chair}>A1</div>
-                <div className={styles.chair}>A1</div>
-                <div className={styles.chair}>A1</div>
-                <div className={styles.chairSelected}>A1</div>
-                <div className={styles.chair}>A1</div>
-              {/* ))} */}
+              {chairs.map((e,index) => {
+                e.id = index;
+                return (
+                <div className={selectedchair == e.id  ? `${styles.selectedcolor} ${styles.chair} ` : `${styles.chair} `} 
+                    onClick={() => {
+                      if(selectedchair == e.id)
+                        setSelectedchair(-1);
+                      else
+                        setSelectedchair(e.id)} 
+                    }
+                    key={e.id}>
+                  {e.chair}
+                </div>
+            )})}
             </Row>
             <Row>
               <div className={styles.footer}>
-              <p>Chairs: C8, C9, C10</p>
-              <div style={{display:"flex"}}>
-                <p style={{display:"flex"}}><div className={styles.sold}></div>Sold</p>
-                <p style={{display:"flex",marginLeft:"1rem"}}><div className={styles.available}></div>Available</p>
-                <p style={{display:"flex",marginLeft:"1rem"}}><div className={styles.selected}></div>Selected</p>
-              </div>
+                <p>Chairs: C8, C9, C10</p>
+                <div style={{ display: "flex" }}>
+                  <p style={{ display: "flex" }}><div className={styles.sold}></div>Sold</p>
+                  <p style={{ display: "flex", marginLeft: "1rem" }}><div className={styles.available}></div>Available</p>
+                  <p style={{ display: "flex", marginLeft: "1rem" }}><div className={styles.selected}></div>Selected</p>
+                </div>
               </div>
             </Row>
           </Col>
@@ -400,3 +363,4 @@ const index = () => {
 }
 
 export default index
+
