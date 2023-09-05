@@ -2,7 +2,7 @@ import home from './home.png';
 // import { FaPen } from 'react-icons/fa';
 // import { FaTrash } from 'react-icons/fa';
 // import styles from './cart.module.css';
-// import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 // import axios from 'axios';
 // import { Link } from 'react-router-dom';
 import * as React from 'react';
@@ -250,7 +250,7 @@ const baseURL = "https://miracle49-001-site1.itempurl.com/api/testing/parties";
 
 const index = () => {
   const theme = useTheme();
-  const [alignment, setAlignment] = React.useState('partyFrom');
+  const [alignment, setAlignment] = useState('partyFrom');
 
   const handleChange = (event, newAlignment) => {
     setAlignment(newAlignment);

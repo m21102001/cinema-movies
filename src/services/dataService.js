@@ -1,7 +1,7 @@
 // services/dataService.js
-export const fetchUserData = async (userId) => {
+export const fetchUserData = async () => {
     try {
-      const response = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`);
+      const response = await fetch(`https://miracle49-001-site1.itempurl.com`);
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
