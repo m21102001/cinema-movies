@@ -12,7 +12,7 @@
   border-radius: 10px;
   background: #fff;
   box-shadow: 11px 11px 19px 0px rgba(0, 0, 0, 0.2);
-  width: 30rem;
+  width: 35rem;
   height: 27rem;
   display: flex;
   padding: 48px 32px;
@@ -58,14 +58,7 @@
 .container form label input {
   width: 17px;
   height: 17px;
-  background: #041c45;
-  color: #041c45;
   cursor: pointer;
-}
-
-.container form label input:checked {
-  background: #041c45;
-  color: #041c45;
 }
 
 .container form button {
@@ -73,7 +66,18 @@
   height: 4.5rem;
   border-radius: var(--Spacing, 8px);
   background: var(--Primary-Color, #041c45);
-  /* 3D CTA Effect */
   color: #fff;
   font-size: 19px;
+}
+
+@media screen and (max-width: 667px) {
+  .container form {
+    width: 25rem;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .container form {
+    width: 20rem;
+  }
 }
