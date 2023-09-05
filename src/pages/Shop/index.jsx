@@ -16,10 +16,24 @@ import React from 'react';
 
 const index = () => {
 
-  // const [paymentmethod,setMethod] = useState(0);
-  // const [creditmethod,setCreditMethod] = useState(0);
-  // const [cashmethod,setCashMethod] = useState(0);
-  
+  const [ paymentmethod, setMethod] = useState("Cash");
+  const [ totalPrice, setTotalPrice ] = useState("300,60$");
+
+  // const handlerCreditMethod = () => {
+  //   setCreditMethod(creditmethod);
+  // }
+  // const handlerCashMethod = () => {
+  //   setCashMethod(cashmethod);
+  // }
+
+  const onClickPaymentMethod = (e) => {
+    setMethod(e);
+    if (e == "Cash")
+      setTotalPrice("300,60$")
+    else
+      setTotalPrice("0$")
+  }
+
 
   const [selectedchair, setSelectedchair] = useState([]);
   
@@ -300,18 +314,18 @@ const index = () => {
                         <Card.Body>
                           <Card.Title>Payment Method</Card.Title>
                           <div style={{ display: "flex" }}>
-                            <Card.Text>
-                              <input type='radio' id='method1' name='method' value='method1' />
+                            <Card.Text onClick={() => onClickPaymentMethod("Cash") }>
+                              <input type='radio' id='method1' name='method' value="Cash" checked={paymentmethod == "Cash"}/>
                               <label htmlFor="method1" style={{ marginLeft: "1rem" }}><BsCreditCard style={{ fontSize: "1.5rem", marginRight: "0.3rem" }} />Cash</label>
                             </Card.Text>
-                            <Card.Text style={{ marginLeft: "8rem" }}>
-                              <input type='radio' id='method2' name='method' value='method2' />
+                            <Card.Text style={{ marginLeft: "8rem" }} onClick={() => onClickPaymentMethod("Credit")}>
+                              <input type='radio' id='method2' name='method' value="Credit" />
                               <label htmlFor="method2" style={{ marginLeft: "1rem" }}><BsCreditCard style={{ fontSize: "1.5rem", marginRight: "0.3rem" }} />Credit card </label>
                             </Card.Text>
                           </div>
                         </Card.Body>
                         <Card.Subtitle style={{ marginBottom: "1rem" }}>Selected Seats : 32</Card.Subtitle>
-                        <Card.Subtitle style={{ marginBottom: "1rem" }}>Total Payment : 300,60$</Card.Subtitle>
+                        <Card.Subtitle style={{ marginBottom: "1rem" }}>Total Payment : {totalPrice}</Card.Subtitle>
                         <Link
                           to='/report'>
                           <Button style={{ backgroundColor: "#041C45", border: "#041C45", padding: "1rem 0rem", color: "white", width: "100%", borderRadius: "0.3rem" }}
