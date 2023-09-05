@@ -8,6 +8,7 @@ import Card from 'react-bootstrap/Card';
 import { BsChevronLeft } from 'react-icons/bs';
 import { BsCreditCard } from 'react-icons/bs';
 import { AiFillStar } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 // import { IoCashOutline } from 'react-icons/io';
 
 
@@ -223,7 +224,10 @@ const index = () => {
         <Row>
           <Col lg={1} style={{ marginBottom: "1.5rem" }}>
             <div className={styles.return}>
+              <Link
+              to='/'>
               <BsChevronLeft style={{ width: "1.5rem", height: "1.5rem", marginTop: "0.5rem", marginRight: "0.1rem" }} />
+              </Link>
             </div>
           </Col>
           <Col lg={5} style={{ textAlign: "left" }}>
@@ -293,17 +297,21 @@ const index = () => {
                           <div style={{ display: "flex" }}>
                             <Card.Text>
                               <input type='radio' id='method1' name='method' value="method1" />
-                              <label For="method1" style={{ marginLeft: "1rem" }}><BsCreditCard style={{ fontSize: "1.5rem", marginRight: "0.3rem" }} />Cash</label>
+                              <label htmlFor="method1" style={{ marginLeft: "1rem" }}><BsCreditCard style={{ fontSize: "1.5rem", marginRight: "0.3rem" }} />Cash</label>
                             </Card.Text>
                             <Card.Text style={{ marginLeft: "8rem" }}>
                               <input type='radio' id='method2' name='method' value="method2" />
-                              <label For="method2" style={{ marginLeft: "1rem" }}><BsCreditCard style={{ fontSize: "1.5rem", marginRight: "0.3rem" }} />Credit card </label>
+                              <label htmlFor="method2" style={{ marginLeft: "1rem" }}><BsCreditCard style={{ fontSize: "1.5rem", marginRight: "0.3rem" }} />Credit card </label>
                             </Card.Text>
                           </div>
                         </Card.Body>
                         <Card.Subtitle style={{ marginBottom: "1rem" }}>Selected Seats : 32</Card.Subtitle>
                         <Card.Subtitle style={{ marginBottom: "1rem" }}>Total Payment : 300,60$</Card.Subtitle>
-                        <Button style={{ backgroundColor: "#041C45", border: "#041C45", padding: "1rem 0rem", color: "white", width: "100%", borderRadius: "0.3rem" }}>Book a Ticket</Button>
+                        <Link 
+                        to='/report'>
+                        <Button style={{ backgroundColor: "#041C45", border: "#041C45", padding: "1rem 0rem", color: "white", width: "100%", borderRadius: "0.3rem" }}
+                        >Book a Ticket</Button>
+                        </Link>
                       </Card.Body>
                     </div>
                   </form>
